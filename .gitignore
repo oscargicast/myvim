@@ -1,0 +1,6 @@
+bundle
+autoload
+.gitmodules
+.netrwhist
+*.swp
+

@@ -46,6 +46,7 @@ set mouse=a
 " Colorscheme.
 set term=screen-256color
 colorscheme Tomorrow-Night
+syntax enable
 
 " Show line numers.
 set number

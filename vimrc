@@ -88,3 +88,6 @@ autocmd FileType css setlocal shiftwidth=2 tabstop=2
 autocmd FileType tex setlocal shiftwidth=2 tabstop=2
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor='vimlatex'
+
+" Unfold at start
+set foldlevelstart=1

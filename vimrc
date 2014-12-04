@@ -22,7 +22,6 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'lervag/vim-latex'
 Plugin 'tpope/vim-surround'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'Yggdroot/indentLine'
 Plugin 'spf13/snipmate-snippets'
 Plugin 'myusuf3/numbers.vim'
 

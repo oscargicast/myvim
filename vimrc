@@ -91,3 +91,8 @@ let g:tex_flavor='vimlatex'
 
 " Unfold at start
 set foldlevelstart=1
+
+" Highlight current line
+set cursorline
+hi CursorLine term=bold cterm=bold guibg=Grey40
+

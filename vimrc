@@ -27,6 +27,8 @@ Plugin 'spf13/snipmate-snippets'
 Plugin 'myusuf3/numbers.vim'
 Plugin 'fatih/vim-go'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'honza/vim-snippets'
+Plugin 'godlygeek/tabular'
 
 call vundle#end() " required
 filetype plugin indent on " required
@@ -133,3 +135,22 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Clean"     : "✔︎",
     \ "Unknown"   : "?"
     \ }
+
+" Ctrlp
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,__pycache__
+
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+
+" Tabularize
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+
+function! s:align()
+  let p = '^\s*|\s.*\s|\s*$'
+  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+    Tabularize/|/l1
+    normal! 0
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
+endfunction

@@ -29,6 +29,7 @@ Plugin 'fatih/vim-go'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'honza/vim-snippets'
 Plugin 'godlygeek/tabular'
+Plugin 'mileszs/ack.vim'
 
 call vundle#end() " required
 filetype plugin indent on " required
@@ -154,3 +155,8 @@ function! s:align()
     call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
   endif
 endfunction
+
+" Ag. The Silver Searcher
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
